@@ -1,36 +1,79 @@
-import React from 'react';
-
+import React from "react";
 import BaseLayout from "../components/layouts/BaseLayout";
-import axios from "axios";
+import {  Container, Row, Col } from "reactstrap";
+import Typed from "react-typed";
 
-class Index extends React.Component{
-constructor(){
-  super();
-  console.log("constructor");
+
+class Index extends React.Component {
+  constructor() {
+    super();
+  }
   
-}
-componentDidMount(){
-  console.log("ComponentDid mount");
-  
-}
-componentDidUpdate(){
-  console.log("component did update");
-  
-}
-componentWillUnMount(){
-  console.log("componemt will mount");
-  
+  render() {
+    let arr=["Developer","TechLover","JavaScrit ES6","React Js","Mern Stack","GraphQL"]
+    return (
+      <BaseLayout className="cover">
+        <div className="main-section">
+          <div className="background-image">
+            <img src="/static/images/section3.png" />
+          </div>
+
+          <Container>
+            <Row>
+              <Col md="6">
+                <div className="hero-section">
+                  <div className={`flipper`}>
+                    <div className="back">
+                      <div className="hero-section-content">
+                        <h2> Full Stack Web Developer </h2>
+                        <div className="hero-section-content-intro">
+                          Have a look at my portfolio and Projects.
+                        </div>
+                      </div>
+                      <img
+                        className="image"
+                        src="/static/images/section-1.png"
+                      />
+                      <div className="shadow-custom">
+                        <div className="shadow-inner"> </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Col>
+              <Col md="6" className="hero-welcome-wrapper">
+                <div className="hero-welcome-text">
+                  <h1>
+                    Welcome to the portfolio website of Siva . Get informed,
+                    collaborate and discover projects I was working on through
+                    the years!
+                  </h1>
+                </div>
+                <Typed
+     
+  loop
+  typeSpeed={80}
+  backSpeed={40}
+  strings={arr}
+  smartBackspace
+  shuffle={false}
+  backDelay={1000}
+ className="selfTyped"
+  loopCount={0}
+  showCursor
+  cursorChar="|"
+/>
+              
+                <div className="hero-welcome-bio">
+                  <h1>Let's take a look on my work.</h1>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      </BaseLayout>
+    );
+  }
 }
 
-    render(){
-
-    console.log("render");
-    
-        return <BaseLayout>
-      <h1>I am index page</h1>
-      
-        </BaseLayout>
-    }
-}
-
-export default Index
+export default Index;
